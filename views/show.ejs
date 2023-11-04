@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/backend/public/style.css">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            align-items: center;
+            justify-content:center ;
+        }
+        table, th, td{
+            border:1px solid black;
+            justify-content: space-between;
+            text-align: center;
+        }
+        .btn{
+            font-size: 50px;
+           
+        }
+    </style>
+</head>
+<body>
+    <h2>All Users</h2>
+    <form method="GET"action="/new/">
+        <button class="btn">ADD new user</button>
+    </form>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>username</th>
+            <th>Change Username</th>
+            <th>Delete User</th>
+        </tr>
+        <% for(user of users){ %>
+        <tr>
+            <td><%= user.id %></td>
+            <td><%= user.email %></td>
+            <td><%= user.username %></td>
+            <td>
+                <form method="GET" action="/user/<%= user.id %>/edit">
+                    <button class=> Edit username</button>
+                </form>
+            </td>
+            <td>
+                <form method="post" action="/user/<%= user.id %>?_method=DELETE">
+                    <button class=>Delete</button>
+                </form>
+            </td>
+        </tr><%}%>
+    </table>
+</body>
+</html>

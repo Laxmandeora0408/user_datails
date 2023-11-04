@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit usernsme</title>
+</head>
+<style>
+    body{
+        text-align: center; 
+        justify-content: center;
+    }
+</style>
+<body>
+    <h2>hyy laxman!</h2>
+    <h4>Are you want to edit user: <%= user.id %></h4>
+
+
+
+    <form method="post" action="/user/<%=name.id%>?_method=PATCH">
+        <textarea name="username" placeholder="<%=name.username %>" id="" cols="30" rows="2"></textarea>
+        <br><br>
+        <input type="password" name ="password" placeholder="">
+        <button>Edit</button>
+    </form>
+</body>
+</html>
